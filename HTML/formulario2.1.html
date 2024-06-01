@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadrado de Aviso</title>
+
+<link rel="stylesheet" href="formulario.css">"
+
+    <style>
+        #aviso {
+            width: 200px;
+            height: 200px;
+            background-color: lightgray;
+            display: none; /* começa oculto */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            padding: 20px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+<div text-aling="center">
+    <button onclick="exibirAviso()">Enviar</button>
+
+    <div id="aviso">
+        <p>AVISO: Você pressionou o botão de envio!</p>
+    </div>
+
+    <script>
+        function exibirAviso() {
+            var aviso = document.getElementById("aviso");
+            aviso.style.display = "block"; // torna o aviso visível
+        }
+    </script>
+
+<form id="myForm"  method="post">
+    <input type='text' name='nome' placeholder='Seu nome'>
+    <input type='email' name='email' placeholder='Seu email'>
+    <textarea name='mensagem' placeholder='Sua mensagem'></textarea>
+</form>
+</div>
+</body>
+</html>

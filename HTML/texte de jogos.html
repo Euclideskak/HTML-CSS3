@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fight Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .character {
+            width: 150px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        #status {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fight Game</h1>
+    <div class="container">
+        <img id="player1" class="character" src="https://via.placeholder.com/150" alt="Player 1" onclick="attack(1)">
+        <img id="player2" class="character" src="https://via.placeholder.com/150" alt="Player 2" onclick="attack(2)">
+    </div>
+    <p id="status">Let the fight begin!</p>
+
+    <script>
+        let healthPlayer1 = 100;
+        let healthPlayer2 = 100;
+
+        function attack(attacker) {
+            let defender = attacker === 1 ? 2 : 1; // Determine the defender
+
+            let damage = Math.floor(Math.random() * 10) + 1; // Random damage between 1 and 10
+
+            if (defender === 1) {
+                healthPlayer1 -= damage;
+                if (healthPlayer1 < 0) healthPlayer1 = 0;
+            } else {
+                healthPlayer2 -= damage;
+                if (healthPlayer2 < 0) healthPlayer2 = 0;
+            }
+
+            updateStatus();
+        }
+
+        function updateStatus() {
+            let statusElement = document.getElementById("status");
+            if (healthPlayer1 === 0 && healthPlayer2 === 0) {
+                statusElement.textContent = "It's a draw!";
+            } else if (healthPlayer1 === 0) {
+                statusElement.textContent = "Player 2 wins!";
+            } else if (healthPlayer2 === 0) {
+                statusElement.textContent = "Player 1 wins!";
+            } else {
+                statusElement.textContent = `Player 1: ${healthPlayer1} HP | Player 2: ${healthPlayer2} HP`;
+            }
+        }
+    </script>
+</body>
+</html>

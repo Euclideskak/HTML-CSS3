@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadrado Giratório</title>
+    <style>
+        .quadrado {
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            animation: girar 2s linear infinite; /* Define a animação de rotação */
+        }
+    
+        
+        /* Define a animação de rotação */
+        @keyframes girar {
+            from {
+                transform: rotate(600deg);
+            }
+            to {
+                transform: rotate(0deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="quadrado"></div>
+
+</body>
+</html>

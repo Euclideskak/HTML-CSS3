@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>figuras geometricas</title>
+</head>
+<body>
+   
+    <canvas id="myCanvas" width="400" height="300" style="border:1px solid #f80000;"></canvas>
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle = 'red';
+        ctx.fillRect(51, 10, 400, 50);
+
+        ctx.fillStyle = 'white'; // cor do texto
+        ctx.font = '20px Arial'; // estilo do texto
+        ctx.fillText('Euclides Fernando Montilha de Mello <br> Data:25/04/24', 55, 35); // texto e posição
+    </script>
+
+ 
+    
+</body>
+</html>

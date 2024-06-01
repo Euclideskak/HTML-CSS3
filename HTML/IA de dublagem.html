@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dublagem de Filmes e Animes</title>
+    <link rel="stylesheet" href="dublagem.css">
+</head>
+<body>
+    <h1>Dublagem de Filmes e Animes</h1>
+    <input type="file" id="audioFile" accept="audio/*">
+    <button onclick="uploadFile()">Enviar</button>
+    <div id="output"></div>
+
+    <script>
+        function uploadFile() {
+            var fileInput = document.getElementById('audioFile');
+            var file = fileInput.files[0];
+            var formData = new FormData();
+            formData.append('audioFile', file);
+
+            fetch('/dub', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('output').textContent = data;
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+            });
+        }
+    </script>
+</body>
+</html>

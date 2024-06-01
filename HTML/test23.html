@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programação Bot</title>
+</head>
+<body>
+    <h1>Programação Bot</h1>
+    <p>Bem-vindo ao Programação Bot! Como posso te ajudar hoje?</p>
+    <textarea id="input" placeholder="Digite sua pergunta..."></textarea><br>
+    <button onclick="askBot()">Enviar</button>
+    <div id="response"></div>
+    
+    <script>
+        function askBot() {
+            const question = document.getElementById('input').value.toLowerCase();
+            const response = document.getElementById('response');
+
+            if (question.includes('java')) {
+                response.textContent = "Java é uma linguagem de programação de alto nível, orientada a objetos e amplamente utilizada em desenvolvimento de software.";
+            } else if (question.includes('python')) {
+                response.textContent = "Python é uma linguagem de programação interpretada, de alto nível, de propósito geral, criada por Guido van Rossum.";
+            } else if (question.includes('javascript')) {
+                response.textContent = "JavaScript é uma linguagem de programação de alto nível, interpretada, full-stack e multi-paradigma.";
+            } else if (question.includes('html')) {
+                response.textContent = "HTML é uma linguagem de marcação utilizada na construção de páginas web.";
+            } else if (question.includes('css')) {
+                response.textContent = "CSS é uma linguagem de estilo usada para estilizar elementos escritos em uma linguagem de marcação, como HTML.";
+            } else {
+                response.textContent = "Desculpe, não entendi sua pergunta. Por favor, pergunte sobre Java, Python, JavaScript, HTML ou CSS.";
+            }
+
+            // Limpa o campo de entrada após a pergunta
+            document.getElementById('input').value = '';
+        }
+    </script>
+</body>
+</html>

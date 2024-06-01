@@ -1,0 +1,43 @@
+.io, .oi, .texto1 { /* Unificar estilos comuns para simplificar o CSS */
+    text-align: right;
+    color: rgb(0, 0, 0);
+    font-size: 30px; /* Ajustar conforme necessidade */
+}
+
+.dados { /* Classe para estilos específicos, se necessário */
+    font-size: 20px;
+    position: relative;
+   text-align: center;
+
+}
+
+.div1 {
+    margin-bottom: 20px; /* Espaço abaixo do elemento */
+}
+
+.texto1 {
+    margin-top: 15px; /* Espaço acima do elemento */
+}
+
+body {
+    background-color: rgb(133, 124, 122); /* Cor de fundo definida */
+}
+
+.background {
+    background-image: url('background.jpg');
+    background-size: cover; /* Cobrir todo o elemento */ 
+}
+
+.futuro {
+
+text-align: center;
+font-size: 20px;
+}
+
+.imguser {
+    float: left;
+    position: absolute;
+    width: 13%;
+    height: 20%;
+   
+}
